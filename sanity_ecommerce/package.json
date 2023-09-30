@@ -1,15 +1,14 @@
 {
-  "name": "manner",
+  "name": "ecommerce",
   "private": true,
   "version": "1.0.0",
+  "description": "",
   "main": "package.json",
+  "author": "Rinku Patel <rinkupatel1213@gmail.com>",
   "license": "UNLICENSED",
   "scripts": {
-    "dev": "sanity dev",
     "start": "sanity start",
-    "build": "sanity build",
-    "deploy": "sanity deploy",
-    "deploy-graphql": "sanity graphql deploy"
+    "build": "sanity build"
   },
   "keywords": [
     "sanity"
@@ -23,16 +22,10 @@
     "@sanity/eslint-config-studio": "^2.0.0",
     "@sanity/vision": "^2.34.0",
     "eslint": "^8.6.0",
-    "prop-types": "15.7",
-    "react": "17.0",
-    "react-dom": "17.0",
+    "prop-types": "^15.7",
+    "react": "^17.0",
+    "react-dom": "^17.0",
     "sanity": "^3.16.7",
     "styled-components": "^5.2.0"
-  },
-  "prettier": {
-    "semi": false,
-    "printWidth": 100,
-    "bracketSpacing": false,
-    "singleQuote": true
   }
 }
