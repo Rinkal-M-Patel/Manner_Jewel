@@ -10,7 +10,7 @@ import { urlFor } from '../lib/client';
 export const Cart = () => {
 
   const cartRef = useRef();
-  const { totalPrice, totalQuantities, cartItems = [], setShowCart } = useStateContext(0);
+  const { totalPrice, totalQuantities, cartItems = [], setShowCart,toggleCartItemQuanitity,onRemove } = useStateContext(0);
 
   const handleCheckout = async () => {
 
@@ -56,17 +56,18 @@ export const Cart = () => {
                 <div className="flex bottom">
                   <div>
                   <p className="quantity-desc">
-                    <span className="minus" onClick="">
+                    <span className="minus" onClick={() => toggleCartItemQuanitity(item._id, 'dec') }>
+                   
                     <AiOutlineMinus />
                     </span>
-                    <span className="num">0</span>
-                    <span className="plus" onClick=""><AiOutlinePlus /></span>
+                    <span className="num">{item.quantity}</span>
+                    <span className="plus" onClick={() => toggleCartItemQuanitity(item._id, 'inc')}><AiOutlinePlus /></span>
                   </p>
                   </div>
                   <button
                     type="button"
                     className="remove-item"
-                    onClick=""
+                    onClick={() => onRemove(item)}
                   >
                     <TiDeleteOutline />
                   </button>
