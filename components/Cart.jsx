@@ -13,6 +13,7 @@ export const Cart = () => {
   const { totalPrice, totalQuantities, cartItems = [], setShowCart } = useStateContext(0);
 
   const handleCheckout = async () => {
+
   };
   return (
    <>
@@ -82,8 +83,8 @@ export const Cart = () => {
               <h3>${totalPrice}</h3>
             </div>
             <div className="btn-container">
-              <button type="button" className="btn" onClick="">
-                Pay now
+              <button type="button" className="btn" onClick={handleCheckout}>
+                Pay Now
               </button>
             </div>
           </div>
