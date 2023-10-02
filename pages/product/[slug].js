@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { client, urlFor } from '../../lib/client';
-import { Product } from '../../components';
+import { useStateContext } from '../../context/StateContext';
 
 const ProductDetails = ({ product, products }) => {
     const { image, name, details, price } = product;
     const [index, setIndex] = useState(0);
+    const { decQty, incQty, qty } = useStateContext();
 
   return (
     <div>
@@ -27,7 +28,7 @@ const ProductDetails = ({ product, products }) => {
      <div className="media-body">
        <h5 className="mt-0">{name}</h5>
        <p>{details}</p>
-       <p className="price">${price}</p>
+       <p className="price">{price}</p>
        </div>
    </div>
         </div>
@@ -36,9 +37,9 @@ const ProductDetails = ({ product, products }) => {
         <div className="">
             <h3>Quantity:</h3>
             
-              <button className="btn">minus</button>
-              <span>20</span>
-              <button className="btn">plus</button>
+              <button className="btn" onClick={decQty}>minus</button>
+              <span>{qty}</span>
+              <button className="btn" onClick={incQty}>plus</button>
         
           </div>
           <div>

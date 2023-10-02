@@ -6,6 +6,7 @@ import { client } from '../lib/client';
 const Home = ({ products }) => {
   return (
     <div>
+      
       <div>
       <h1>Best selling product</h1>
       <p>bracelete colletion you cna choose</p>
