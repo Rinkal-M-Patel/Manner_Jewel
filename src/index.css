@@ -1,0 +1,46 @@
+/* HeroBanner.css */
+
+.hero-banner {
+    background-image: url('hero-background.jpg'); /* Put correct Hero */
+    background-size: cover;
+    color: #ffffff;
+    padding: 100px 0;
+    text-align: center;
+  }
+  
+  .hero-banner h1 {
+    font-size: 36px;
+  }
+  
+  .hero-banner p {
+    font-size: 18px;
+  }
+  
+
+  /* Footer.css */
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 0;
+  }
+  
+  .footer h4 {
+    color: #fff;
+  }
+  
+  .social-icons li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  .social-icons a {
+    color: #fff;
+    font-size: 24px;
+    text-decoration: none;
+  }
+  
+  .social-icons a:hover {
+    color: #007bff;
+  }
+  
