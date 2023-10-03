@@ -7,7 +7,10 @@ const JewelryCard = ({ jewelryData, addToCart }) =>
     return (
         <div className="card">
             <img src={jewelryData.imageURL} alt={jewelryData.name} className="card-img-top" />;
-            <div className="card-body">                
+            <div className="card-body"> 
+            <h5 className="card-title">{jewelryData.name}</h5>;
+            <p className="card-text">{jewelryData.desciption}</p>;
+            <p className="card-text">{jewelryData.price}</p>;        
             </div>
         </div>
     )
