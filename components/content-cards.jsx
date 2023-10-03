@@ -10,7 +10,9 @@ const JewelryCard = ({ jewelryData, addToCart }) =>
             <div className="card-body"> 
             <h5 className="card-title">{jewelryData.name}</h5>;
             <p className="card-text">{jewelryData.desciption}</p>;
-            <p className="card-text">{jewelryData.price}</p>;        
+            <p className="card-text">{jewelryData.price}</p>;  
+            <button className="btn btn-warning"
+            onClick={() => addToCart(jewelryData)}>Add to Cart</button>;
             </div>
         </div>
     )
