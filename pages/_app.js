@@ -1,8 +1,9 @@
 import React from 'react'
 import '../styles/globals.css'
+import '../styles/index.css'
 import {StateContext} from '../context/StateContext';
 import { Toaster } from 'react-hot-toast';
-import { Navbar } from '../components';
+import { Footer, Navbar } from '../components';
 
 function MyApp({ Component, pageProps }) {
   return(
@@ -11,6 +12,7 @@ function MyApp({ Component, pageProps }) {
         <Navbar />
       <Toaster />
       <Component {...pageProps}/>
+      <Footer />
       </StateContext>
       
       </div>
