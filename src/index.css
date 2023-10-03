@@ -1,0 +1,67 @@
+/* HeroBanner */
+
+
+.hero-banner {
+    background-image: url('hero-background.jpg');
+    background-size: cover;
+    color: #fff;
+    padding: 100px 0;
+    text-align: center;
+  }
+  
+  .hero-banner h1 {
+    font-size: 36px;
+  }
+  
+  .hero-banner p {
+    font-size: 18px;
+  }
+  
+  /* ProductCarousel */
+  
+  .product-carousel {
+    padding: 40px 0;
+  }
+  
+  .product-card {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .product-card img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .product-card h3 {
+    margin-top: 10px;
+  }
+  
+
+  /* Footer */
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 0;
+  }
+  
+  .footer h4 {
+    color: #fff;
+  }
+  
+  .social-icons li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  .social-icons a {
+    color: #fff;
+    font-size: 24px;
+    text-decoration: none;
+  }
+  
+  .social-icons a:hover {
+    color: #007bff;
+  }
+  
