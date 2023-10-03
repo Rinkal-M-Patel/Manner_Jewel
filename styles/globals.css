@@ -126,3 +126,39 @@ a {
   background: transparent;
   border: none;
 }
+
+/* success page style */
+.thank-you-page {
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7; /* Light gray background */
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.thank-you-header {
+  font-size: 36px;
+  font-weight: bold;
+  color: #007BFF; /* Blue text */
+}
+
+.thank-you-content {
+  font-size: 18px;
+  color: #555; /* Dark gray text */
+  margin-top: 20px;
+}
+
+.back-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #007BFF; /* Blue button */
+  color: #fff; /* White text */
+  font-size: 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #0056b3; /* Darker blue button on hover */
+}
