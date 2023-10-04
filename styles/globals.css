@@ -162,3 +162,49 @@ a {
 .back-button:hover {
   background-color: #0056b3; /* Darker blue button on hover */
 }
+.back{
+  background-color: red;
+}
+
+
+
+
+
+.product-card {
+  margin: 10px;
+  max-width: 300px;
+  width: 100%;
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+  width: 260px;
+  height: auto;
+  display: block;
+}
+
+.card-body {
+  padding: 16px;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.product-price {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .product-card {
+    margin: 10px auto;
+  }
+}
