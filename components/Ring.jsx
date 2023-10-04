@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { urlFor } from '../lib/client';
 
 const Product = ({ product: { image, name, slug, price } }) => {
-  if (name === 'bracelete') {
+  if (name === 'ring') {
     return (
       <>
         <Link href={`/product/${slug.current}`}>
@@ -14,7 +14,6 @@ const Product = ({ product: { image, name, slug, price } }) => {
               width={250}
               height={250}
               className="product-image"
-              alt={name}
             />
 
             <div className="card-body">

@@ -1,0 +1,236 @@
+        .text-bold {
+            font-weight: 800;
+        }
+
+        body {
+            font-family: Montserrat;
+        }
+
+        .card-custom {
+            background-color: black;
+        }
+
+        text-color {
+            color: #0093c4;
+        }
+
+        /* Main image - left */
+        .main-img img {
+            width: 100%;
+        }
+
+        /* Preview images */
+        .previews img {
+            width: 100%;
+            height: 140px;
+        }
+
+        .main-description .category {
+            text-transform: uppercase;
+            color: #0093c4;
+        }
+
+        .main-description .product-title {
+            font-size: 2.5rem;
+        }
+
+        .old-price-discount {
+            font-weight: 600;
+        }
+
+        .new-price {
+            font-size: 2rem;
+        }
+
+        .details-title {
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: #757575;
+        }
+
+        .buttons .block {
+            margin-right: 5px;
+        }
+
+        .quantity input {
+            border-radius: 0;
+            height: 40px;
+
+        }
+
+
+        .custom-btn {
+            text-transform: capitalize;
+            background-color: #eaedee;
+            color: rgb(59, 54, 54);
+            height: 40px;
+            border-radius: 0;
+        }
+
+        .custom-btn:hover {
+            background-color: #8f9293 !important;
+            font-size: 18px;
+            color: white !important;
+        }
+
+        .similar-product img {
+            width: 300px;
+            height: 400px;
+        }
+
+        .similar-product {
+
+
+            text-align: left;
+        }
+
+        .similar-product .title {
+            margin: 17px 0px 4px 0px;
+        }
+
+        .similar-product .price {
+            font-weight: bold;
+        }
+
+        .questions .icon i {
+            font-size: 2rem;
+        }
+
+        .questions-icon {
+            font-size: 2rem;
+            color: #0093c4;
+        }
+
+        /* New customized */
+
+        .secure {
+            text-align: center;
+            color: aliceblue;
+        }
+
+        .form-product {
+            min-height: 400px;
+            min-width: 400px;
+            border: solid 1px;
+            border-color: #757575;
+        }
+
+        .form-item {
+            border-bottom: solid 1px;
+            margin: 20px auto;
+            padding-bottom: 20px;
+            border-color: #757575;
+        }
+
+        .form-item h4 {
+            color: aliceblue;
+            font-size: 1.2rem;
+        }
+
+
+
+        .silver-class {
+            border: solid 2px grey;
+            color: silver;
+            margin-left: 5px;
+            border-radius: 100%;
+            background-color: silver;
+            transition: color 0.3s, background-color 0.3s;
+        }
+
+        .silver-class:hover {
+            cursor: pointer;
+            background-color: lightgoldenrodyellow;
+            color: silver;
+        }
+
+        .gold-class {
+            border: solid 2px grey;
+            border-radius: 100%;
+            background-color: gold;
+            color: gold;
+            transition: color 0.3s, background-color 0.3s;
+        }
+
+        .gold-class:hover {
+            cursor: pointer;
+            background-color: lightgoldenrodyellow;
+            color: goldenrod;
+        }
+
+        .form-item span {
+            color: grey;
+        }
+
+        .p-class p {
+            font-size: 0.8rem;
+            color: aliceblue;
+            ;
+        }
+
+        .quantity {
+            display: flex;
+            justify-content: end;
+        }
+
+        .water-class a {
+            text-decoration: none;
+            color: aliceblue;
+
+
+        }
+
+        .water-class a p {
+            transition: 0.7s;
+
+        }
+
+        .water-class a p:hover {
+            color: rgb(215, 211, 211);
+
+        }
+
+        .fa-brands i {
+            height: 16px;
+            width: 16px;
+
+        }
+
+        .icons {
+            border-top: solid 1px;
+            margin: 20px;
+            border-color: #757575;
+        }
+
+        .icons .col-12 p a {
+            color: inherit;
+
+            text-decoration: none;
+        }
+
+        .icons .col-12 p a i {
+            font-size: 20px;
+        }
+
+
+
+        @media (max-width: 767.98px) {
+
+
+            .previews img {
+                width: 100%;
+                height: auto;
+            }
+
+        }
+
+        @media (max-width: 1514.98px) {
+
+
+            .similar-product img {
+                width: 100%;
+                height: auto;
+            }
+
+        }

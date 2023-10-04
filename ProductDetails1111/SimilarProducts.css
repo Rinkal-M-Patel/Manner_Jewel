@@ -1,0 +1,74 @@
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+
+.container1 {
+    height: 100%;
+    width: 100%;
+    background-color: #141314;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container1 h2 {
+    color: aliceblue;
+}
+
+.wrapper1 {
+    height: 400px;
+    width: min(100%, 800px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    transition: gap 0.3s ease-in-out;
+}
+
+.card1 {
+    height: 100%;
+    width: 100%;
+    background-color: rgb(18, 16, 16);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 8px 8px 10px #00000010;
+}
+
+.card1 p {
+    color: aliceblue;
+}
+
+.card1:hover.product_img {
+    transform: scale(1.2);
+}
+
+.wrapper1:hover> :not(:hover) {
+    width: 0;
+}
+
+.wrapper1:hover {
+    gap: 0;
+}
+
+.product_img1 {
+    display: block;
+    width: min(100%, 400px);
+    transition: all 0.3s ease-in-out;
+}
+
+.wrapper1 .card1:hover .product_description {
+    display: block;
+}
+
+.wrapper1 .card1:not(:hover) .product_description {
+    display: none;
+}

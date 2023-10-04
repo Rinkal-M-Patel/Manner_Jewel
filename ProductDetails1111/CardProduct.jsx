@@ -1,85 +1,53 @@
-import React, { useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { client, urlFor } from '../../lib/client';
-import { useStateContext } from '../../context/StateContext';
-import { Acordion, ModalPop } from '../../components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDroplet,faCircle } from '@fortawesome/free-solid-svg-icons';
+import React, { useState } from "react";
+import headerImage1 from "../assets/header5.webp";
+import "./Card.css";
+import ImagesSection from "./ImageSection";
+import Quantity from "./Quantity";
+import Accordion from "./Acordion";
+import ProductContainer from "./SimilaProducts.jsx";
 
-
-const ProductDetails = ({ product, products }) => {
-
+import ModalPop from "./ModalPop.jsx";
+const CardProduct = () => {
   const [selectedColor, setSelectedColor] = useState("");
 
   const updateColor = (color) => {
     setSelectedColor(color.charAt(0).toUpperCase() + color.slice(1));
   };
 
-    const { image, name, details, price } = product;
-    const [index, setIndex] = useState(0);
-    const { decQty, incQty, qty, onAdd,setShowCart } = useStateContext();
-
-    const handleBuyNow = () => {
-      onAdd(product, qty);
-  
-      setShowCart(true);
-    }
-
   return (
-
-<>
-
-
-<div className="container product-detail-container">
-      <div className="row">
-          {/*------------------------ card production------------------------------------ */}
-
-          <div className="container my-5">
+    <>
+      <div className="container my-5">
         <div className="row">
-          <div className='col-md-5'>
-          <img src={urlFor(image && image[index])} className="mr-3"  height={500}/>
-        <div>
-           {image?.map((item, i) => (
-                 <img 
-                   key={i}
-                   src={urlFor(item)}
-                   className={i === index ? 'small-image selected-image' : 'small-image'}
-                   onMouseEnter={() => setIndex(i)}
-                   height={150}
-                 />
-               ))}
-           </div>
-          </div>
-        
+          <ImagesSection />
           <div className="col-md-7 ">
             <div className="container-fluid d-flex justify-content-center row">
               <div className="row secure">
-                <h3>{name}</h3>
+                <h3> I AM</h3>
               </div>
               <div className=" col-10 form-product">
                 <div className="row form-item">
-                  <h4>£{price}</h4>
+                  <h4>£55</h4>
                 </div>
                 <div className="row form-item">
                   <h4>COLOR</h4>
                   <div className="color-selector">
-                   
-                     <FontAwesomeIcon 
+                    <i
                       type="radio"
                       id="gold"
                       name="color"
                       onClick={() => updateColor("GOLD")}
-                      icon={faCircle} className="gold-class" />
+                      className="fa-regular fa-circle gold-class"
+                    ></i>
 
                     <label htmlFor="gold" className="color-circle gold"></label>
-                    <FontAwesomeIcon 
+                    <i
                       type="radio"
                       id="silver"
                       name="color"
                       value="silver"
                       onClick={() => updateColor("SILVER")}
-                      icon={faCircle} className="silver-class" />
-                  
+                      className="fa-regular fa-circle silver-class"
+                    ></i>
                   </div>
                   <span id="selectedColor">{selectedColor}</span>
                 </div>
@@ -89,41 +57,29 @@ const ProductDetails = ({ product, products }) => {
                   </div>
                   <div className="col-6 quantity">
                     <h4>
-
-                      {/* ----------------------------plus minus button------------------------------------ */}
-                    <div className="quantity-toggle">
-              
-                      <button onClick={decQty}>&mdash;</button>
-                      <input type="text" value={qty} readOnly />
-                      <button onClick={incQty}>&#xff0b;</button>
-                    </div>
+                      <Quantity />
                     </h4>
                   </div>
                 </div>
                 <div className="row">
                   <div className="block">
-                  <div>
-          
-           
-          </div>
-                    <button className="shadow btn custom-btn w-100" onClick={() => onAdd(product, qty)}> 
+                    <button className="shadow btn custom-btn w-100">
                       Add to cart +
                     </button>
-                    <button type="button" className="shadow btn custom-btn w-100" onClick={handleBuyNow}>Buy Now</button>
                   </div>
                 </div>
                 <div className="row">
                   <div className="block  btn  w-100">
-                   <ModalPop />
+                    <ModalPop />
                   </div>
                 </div>
 
                 <div className="row my-4 p-class">
                   <p>
-                   
-                    <FontAwesomeIcon icon={faDroplet} className="mx-1" />FREE
+                    {" "}
+                    <i className=" mx-1 fa-solid fa-arrows-rotate"></i>FREE
                     RETURNS
-                  </p>
+                  </p>{" "}
                   <br />
                   <p>
                     <i className=" mx-1 fa-regular fa-envelope"></i> FREE GIFT
@@ -205,65 +161,13 @@ const ProductDetails = ({ product, products }) => {
         </div>
         <div className="col-12 col-md-5 ">
           {" "}
-        <Acordion />
+          <Accordion />{" "}
         </div>
       </div>
-     
-          {/*----------------------------- card production end------------------------------ */}
+      <div className="container-fluid similar-products my-4">
+        <ProductContainer />
       </div>
-    </div>
-
     </>
-  )
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-export const getStaticPaths = async () => {
-    const query = `*[_type == "product"] {
-      slug {
-        current
-      }
-    }
-    `;
-  
-    const products = await client.fetch(query);
-  
-    const paths = products.map((product) => ({
-      params: { 
-        slug: product.slug.current
-      }
-    }));
-  
-    return {
-      paths,
-      fallback: 'blocking'
-    }
-  }
-  
-
-export const getStaticProps = async ({ params: { slug }}) => {
-    const query = `*[_type == "product" && slug.current == '${slug}'][0]`;
-    const productsQuery = '*[_type == "product"]'
-    
-    const product = await client.fetch(query);
-    const products = await client.fetch(productsQuery);
-  
-    console.log(product);
-  
-    return {
-      props: { products, product }
-    }
-  }
-
-export default ProductDetails
+  );
+};
+export default CardProduct;

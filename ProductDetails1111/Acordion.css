@@ -1,0 +1,32 @@
+.accordion-item {
+    color: aliceblue;
+
+}
+
+.accordion-item h2 button {
+    background-color: #151313;
+    color: #272222;
+}
+
+.accordion-item h2 button {
+    color: rgb(231, 235, 239);
+}
+
+.accordion-body {
+    background-color: #151515;
+}
+
+#accordionFlushExample {
+    color: #151515;
+}
+
+.accordion {
+    color: #151313;
+    background-color: #100e0e !important;
+    border-top: 1px solid #ddd1d1;
+
+}
+
+.accordion-header {
+    color: #100e0e;
+}
