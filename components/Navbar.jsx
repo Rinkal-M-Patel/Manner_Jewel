@@ -7,24 +7,17 @@ import Image from 'next/image';
 import { Cart } from './Cart';
 import { useStateContext} from '../context/StateContext';
 
-
 const Navbar = () => {
+const [searchInput, setSearch] = useState("");
 
-  const [searchInput, setSearch] = useState("");
-
-
-
-  const handleInput = (e) => {
+const handleInput = (e) => {
     setSearch(e.target.value);
-  };
+  };  
  
   const { showCart, setShowCart, totalQuantities } = useStateContext(0);
   
-
   return (
-
     <>
-    
     <nav className="navbar navbar-custom navbar-dark bg-dark fixed-top ">
         <div className="container-fluid">
           <button
@@ -36,20 +29,30 @@ const Navbar = () => {
           >
             <span className="navbar-toggler-icon" />
           </button>
-          <div className="navbar-brand logo">
-          <Link href="/">
-          <a>
-            {/* Use the Image component to render the logo */}
-            <Image src="/../public/WhiteLogo.png" alt="Logo" width={200} height={150} className="logo" />
-          </a>
-        </Link>
+            <div className="navbar-brand logo">
+            <Link href="/">
+              <a>
+                {/* Use the Image component to render the logo */}
+                <Image
+                  src="/../public/WhiteLogo.png"
+                  alt="Logo"
+                  width={200}
+                  height={150}
+                  className="logo"
+                />
+              </a>
+            </Link>
           </div>
 
           <div className="icons">
             <a href="">
               <i className=" iconClass  fa-brands fa-searchengin"></i>
             </a>
-            <button type="button" className="btn btn-outline-info" onClick={() => setShowCart(true)}>
+            <button
+              type="button"
+              className="btn btn-outline-info"
+              onClick={() => setShowCart(true)}
+            >
               <AiOutlineShopping />
               <span>{totalQuantities}</span>
             </button>
@@ -113,16 +116,10 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
-     
-
-      
 
      {showCart && <Cart />}
-    
-   
-
     </>
   )
-}
+};
 
 export default Navbar
