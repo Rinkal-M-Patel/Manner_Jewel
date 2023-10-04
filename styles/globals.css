@@ -354,3 +354,67 @@ a {
   }
 }
 
+.navbar-custom {
+  padding-top: 30px;
+  height: 120px;
+  z-index: 1030;
+}
+
+
+
+
+.custom-togler {
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.logo {
+  margin-top: 0;
+  padding-top: 0;
+  height: 100px;
+  width: 140px;
+}
+
+.iconClass {
+  color: white;
+  margin: 20px 20px 0px 20px;
+  font-size: 23px;
+  transition: 0.3s ease-in-out;
+}
+
+.iconClass:hover {
+  transform: scale(1.1);
+}
+
+#firstHalf {
+  background-image: url(../public/header1.jpg);
+}
+
+.promotional-service {
+  position: fixed !important;
+  top: 0 !important;
+  right: 0;
+  left: 0;
+  z-index: 1050;
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
+  background-color: #f9f9f9;
+  padding-bottom: 5px;
+
+
+
+}
+
+.promotional-service span {
+  margin-right: 18%;
+  opacity: 0;
+  z-index: 1050;
+
+}
+
+.promotional-service span.visible {
+  opacity: 1;
+  animation: moveText 6s linear infinite;
+}
