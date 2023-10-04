@@ -494,3 +494,146 @@ a {
 .product-shipping-details p {
   margin: 5px 0;
 }
+
+/* acordion css */
+.accordion-item {
+  color: aliceblue;
+
+}
+
+.accordion-item h2 button {
+  background-color: #151313;
+  color: #272222;
+}
+
+.accordion-item h2 button {
+  color: rgb(231, 235, 239);
+}
+
+.accordion-body {
+  background-color: #151515;
+}
+
+#accordionFlushExample {
+  color: #151515;
+}
+
+.accordion {
+  color: #151313;
+  /* background-color: #100e0e !important; */
+  background-color: #e2e2e2 !important;
+  border-top: 1px solid #ddd1d1;
+
+}
+
+.accordion-header {
+  color: #100e0e;
+}
+
+/* card css */
+
+.text-bold {
+  font-weight: 800;
+}
+
+body {
+  font-family: Montserrat;
+  background-color: #e2e2e2 !important;
+}
+
+.card-custom {
+  background-color: black;
+}
+
+text-color {
+  color: #0093c4;
+}
+
+/* Main image - left */
+.main-img img {
+  width: 100%;
+}
+
+/* Preview images */
+.previews img {
+  width: 100%;
+  height: 140px;
+}
+
+.main-description .category {
+  text-transform: uppercase;
+  color: #0093c4;
+}
+
+.main-description .product-title {
+  font-size: 2.5rem;
+}
+
+.old-price-discount {
+  font-weight: 600;
+}
+
+.new-price {
+  font-size: 2rem;
+}
+
+.details-title {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #757575;
+}
+
+.buttons .block {
+  margin-right: 5px;
+}
+
+.quantity input {
+  border-radius: 0;
+  height: 40px;
+
+}
+
+
+.custom-btn {
+  text-transform: capitalize;
+  background-color: #eaedee !important;
+  color: rgb(59, 54, 54) !important;
+  height: 40px;
+  border-radius: 0;
+  margin-bottom: 1rem;
+}
+
+.custom-btn:hover {
+  background-color: #8f9293 !important;
+  font-size: 18px;
+  color: white !important;
+}
+
+.similar-product img {
+  width: 300px;
+  height: 400px;
+}
+
+.similar-product {
+
+
+  text-align: left;
+}
+
+.similar-product .title {
+  margin: 17px 0px 4px 0px;
+}
+
+.similar-product .price {
+  font-weight: bold;
+}
+
+.questions .icon i {
+  font-size: 2rem;
+}
+
+.questions-icon {
+  font-size: 2rem;
+  color: #0093c4;
+}
