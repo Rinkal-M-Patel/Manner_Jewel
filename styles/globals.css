@@ -812,3 +812,22 @@ pre {
   font-size: 1rem;
   cursor: pointer;
 }
+
+/* model pop css */
+.ebcf_modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 826px;
+  width: 80%;
+  display: none;
+  z-index: 1;
+  padding-top: 60px;
+
+
+  height: 60%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
