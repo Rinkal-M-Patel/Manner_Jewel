@@ -125,3 +125,22 @@ a {
   border-radius: 15px;
   background-color: #ebebeb;
 }
+
+.cart-bottom {
+  position: absolute;
+  bottom: 12px;
+  right: 5px;
+  width: 100%;
+  padding: 30px 65px;
+}
+.total {
+  display: flex;
+  justify-content: space-between;
+}
+.remove-item {
+  font-size: 24px;
+  color: #f02d34;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}
