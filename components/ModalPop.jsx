@@ -1,7 +1,6 @@
 /* eslint-disable no-undef */
 import React, { useEffect, useState } from "react";
-import Image from "next/image";
-import html2canvas from "html2canvas";
+
 const SymbolChoices = ({ handleSymbolClick }) => {
   const symbols = [
     "♥",
@@ -136,18 +135,12 @@ const ModalPop = () => {
           <div className="row flex-column flex-sm-row">
             <span className="ebcf_close">&times;</span>
             <div className="col-12 col-sm-6">
-              <div style={{ position: "relative" }}>
                 <Image
                   src="/../public/bracelet1.jpg"
                   className="font-preview engraveImg"
                   style={{
                     fontFamily: selectedFont,
 
-                    width: "100%",
-                    height: "100px",
-                  }}
-                  height={100}
-                  width={100}
                 />
                 <p
                   id="customizedText"

@@ -1,35 +1,49 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {  Product, Necklace } from '../components';
+
+import {  Product, Necklace, HeroBanner, Ring } from '../components';
 import { client } from '../lib/client';
 
 const Home = ({ products}) => {
   return (
     <div>
+     <HeroBanner />
      
-
-      <div>
-      <h1>Best selling product</h1>
-      <p>bracelete colletion you cna choose</p>
-      </div>
-
-      
     <div>
-          {products?.map((product) => <Necklace key={product._id} product={product} />)}
-          {products?.map((product) => <Product key={product._id} product={product} />)}
+          
     </div>
+
+
+    <div className='container main-page'>
+    <h2 className="bordered-text">Best selling Necklace</h2>
+    <div className='row'>
+    {products?.map((product) => <Necklace key={product._id} product={product} />)}
+       
+      </div>
+    </div>
+
+
+    <div className='container main-page'>
+      <h2 className="bordered-text"> Best selling bracelete</h2>
+    <div className='row'>
+        {products?.map((product) => (
+          <Product key={product._id} product={product} />
+        ))}
+      </div>
+    </div>
+
+    <div className='container main-page'>
+      <h2 className="bordered-text">Best selling Ring</h2>
+    <div className='row'>
+    {products?.map((product) => <Ring key={product._id} product={product} />)}
+       
+      </div>
+    </div>
+    
     </div>
   )
 }
 
-
-// export const getServerSideProps = async () => {
-//   const query = '*[_type == "product"]';
-//   const products = await client.fetch(query);
-//   return {
-//     props: { products }
-//   }
-// }
 
 export const getServerSideProps = async () => {
   const query = '*[_type == "product"]';

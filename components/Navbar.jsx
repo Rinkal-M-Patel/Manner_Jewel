@@ -1,24 +1,24 @@
 import React, { useState, useEffect } from "react";
-import Link from "next/link";
-import { AiOutlineShopping } from "react-icons/ai";
-import "../styles/Home.module.css";
+import Link from 'next/link';
+import { AiOutlineShopping } from 'react-icons/ai'
+import '../styles/Home.module.css'
 // import 'bootstrap/dist/js/bootstrap.bundle.min.js'; // Import Bootstrap JavaScript
-import Image from "next/image";
-import { Cart } from "./Cart";
-import { useStateContext } from "../context/StateContext";
+import Image from 'next/image';
+import { Cart } from './Cart';
+import { useStateContext} from '../context/StateContext';
 
 const Navbar = () => {
-  const [searchInput, setSearch] = useState("");
+const [searchInput, setSearch] = useState("");
 
-  const handleInput = (e) => {
+const handleInput = (e) => {
     setSearch(e.target.value);
-  };
-
+  };  
+ 
   const { showCart, setShowCart, totalQuantities } = useStateContext(0);
-
+  
   return (
     <>
-      <nav className="navbar navbar-custom navbar-dark bg-dark fixed-top ">
+    <nav className="navbar navbar-custom navbar-dark bg-dark fixed-top ">
         <div className="container-fluid">
           <button
             className="navbar-toggler custom-togler"
@@ -29,7 +29,7 @@ const Navbar = () => {
           >
             <span className="navbar-toggler-icon" />
           </button>
-          <div className="navbar-brand logo">
+            <div className="navbar-brand logo">
             <Link href="/">
               <a>
                 {/* Use the Image component to render the logo */}
@@ -117,9 +117,9 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {showCart && <Cart />}
+     {showCart && <Cart />}
     </>
-  );
+  )
 };
 
-export default Navbar;
+export default Navbar

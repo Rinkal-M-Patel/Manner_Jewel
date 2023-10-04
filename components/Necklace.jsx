@@ -4,11 +4,11 @@ import Link from 'next/link';
 import { urlFor } from '../lib/client';
 
 const Product = ({ product: { image, name, slug, price } }) => {
-  if (name === 'Headphones') {
+  if (name === 'necklace') {
     return (
-      <div>
+      <>
         <Link href={`/product/${slug.current}`}>
-          <div className="card">
+          <div className="col-md-3">
             <img
               src={urlFor(image && image[0])}
               width={250}
@@ -22,10 +22,10 @@ const Product = ({ product: { image, name, slug, price } }) => {
             </div>
           </div>
         </Link>
-      </div>
+      </>
     );
   }  else {
-    // If name is not "bracelete" or "Headphones", return null or alternative content
+   
     return null;
   }
 }
