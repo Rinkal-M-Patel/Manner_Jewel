@@ -1,5 +1,6 @@
 /* eslint-disable no-undef */
 import React, { useEffect, useState } from "react";
+import html2canvas from "html2canvas";
 import Image from "next/image";
 const SymbolChoices = ({ handleSymbolClick }) => {
   const symbols = [
