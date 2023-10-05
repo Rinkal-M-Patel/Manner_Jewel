@@ -47,16 +47,14 @@ const Navbar = () => {
           </button>
           <div className="navbar-brand logo">
             <Link href="/">
-              <a>
-                {/* Use the Image component to render the logo */}
-                <Image
-                  src="/../public/WhiteLogo.png"
-                  alt="Logo"
-                  width={200}
-                  height={150}
-                  className="logo"
-                />
-              </a>
+              {/* Use the Image component to render the logo */}
+              <Image
+                src="/../public/WhiteLogo.png"
+                alt="Logo"
+                width={200}
+                height={150}
+                className="logo"
+              />
             </Link>
           </div>
 
