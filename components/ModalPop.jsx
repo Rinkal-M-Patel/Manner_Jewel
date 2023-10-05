@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 import React, { useEffect, useState } from "react";
-
+import Image from "next/image";
 const SymbolChoices = ({ handleSymbolClick }) => {
   const symbols = [
     "♥",
@@ -135,13 +135,24 @@ const ModalPop = () => {
           <div className="row flex-column flex-sm-row">
             <span className="ebcf_close">&times;</span>
             <div className="col-12 col-sm-6">
+              <div
+                style={{
+                  position: "relative",
+                  width: "326px",
+                  height: "170px",
+                }}
+              >
                 <Image
-                  src="/../public/bracelet1.jpg"
+                  src="/bracelet1.jpg"
+                  width={326}
+                  height={170}
                   className="font-preview engraveImg"
                   style={{
-                    fontFamily: selectedFont,
-
+                    objectFit: "cover",
+                    borderRadius: "10px",
+                  }}
                 />
+
                 <p
                   id="customizedText"
                   style={{
@@ -150,88 +161,92 @@ const ModalPop = () => {
                     left: "50%",
                     transform: "translate(-50%, -50%)",
                     fontFamily: selectedFont,
+                    fontSize: "16px",
+                    color: "black",
+                    textAlign: "center",
+                    width: "100%",
                   }}
                 >
                   {userInput || "Preview Text"}
                 </p>
               </div>
             </div>
-            <div className="col-12 col-sm-6">
-              <div className="row">
-                <div className="col-4">
-                  <button
-                    className={`font-button my-3 ${
-                      selectedFont === "Helvetica" ? "selected" : ""
-                    }`}
-                    onClick={() => handleFontClick("Helvetica")}
-                  >
-                    Classic
-                  </button>
-                </div>
-                <div className="col-4">
-                  <button
-                    className={`font-button my-3 ${
-                      selectedFont === "Charcoal" ? "selected" : ""
-                    }`}
-                    onClick={() => handleFontClick("Impact")}
-                    style={{
-                      fontStyle: selectedFont === "Charcoal" ? "selected" : "",
-                      fontWeight: "bold",
-                    }}
-                  >
-                    Charcoal
-                  </button>
-                </div>
-                <div className="col-4">
-                  <button
-                    className={`font-button my-3 ${
-                      selectedFont === "Courier New" ? "selected" : ""
-                    }`}
-                    onClick={() => handleFontClick("Courier New")}
-                  >
-                    Contemporary
-                  </button>
-                </div>
-              </div>
-              {/* <SymbolChoices handleSymbolClick={handleSymbolClick} /> */}
-              <SymbolChoices handleSymbolClick={handleSymbolClick} />
-
-              <textarea
-                placeholder="Enter your text here"
-                value={userInput}
-                onChange={(e) => {
-                  const inputValue = e.target.value;
-                  const totalCharacters = inputValue.length;
-
-                  if (totalCharacters <= maxCharacterLimit) {
-                    setUserInput(inputValue);
-                  }
-                }}
-                maxLength={maxCharacterLimit}
-                style={{
-                  maxHeight: "32px",
-                  fontFamily: selectedFont,
-                  fontStyle:
-                    selectedFont === "Times New Roman" ? "italic" : "normal",
-                }}
-              />
-              {userInput.length >= maxCharacterLimit && (
-                <p style={{ color: "grey" }}>
-                  You have reached the maximum number of characters.
-                </p>
-              )}
-              <div className="row my-2">
+          </div>
+          <div className="col-12 col-sm-6">
+            <div className="row">
+              <div className="col-4">
                 <button
-                  onClick={handleSaveImage}
-                  className="shadow btn custom-btn w-100"
+                  className={`font-button my-3 ${
+                    selectedFont === "Helvetica" ? "selected" : ""
+                  }`}
+                  onClick={() => handleFontClick("Helvetica")}
                 >
-                  Save Image
-                </button>
-                <button className="my-2 shadow btn custom-btn w-100">
-                  {" "}
-                  ADD TO CHART
+                  Classic
                 </button>
               </div>
+              <div className="col-4">
+                <button
+                  className={`font-button my-3 ${
+                    selectedFont === "Charcoal" ? "selected" : ""
+                  }`}
+                  onClick={() => handleFontClick("Impact")}
+                  style={{
+                    fontStyle: selectedFont === "Charcoal" ? "selected" : "",
+                    fontWeight: "bold",
+                  }}
+                >
+                  Charcoal
+                </button>
+              </div>
+              <div className="col-4">
+                <button
+                  className={`font-button my-3 ${
+                    selectedFont === "Courier New" ? "selected" : ""
+                  }`}
+                  onClick={() => handleFontClick("Courier New")}
+                >
+                  Contemporary
+                </button>
+              </div>
+            </div>
+            {/* <SymbolChoices handleSymbolClick={handleSymbolClick} /> */}
+            <SymbolChoices handleSymbolClick={handleSymbolClick} />
+
+            <textarea
+              placeholder="Enter your text here"
+              value={userInput}
+              onChange={(e) => {
+                const inputValue = e.target.value;
+                const totalCharacters = inputValue.length;
+
+                if (totalCharacters <= maxCharacterLimit) {
+                  setUserInput(inputValue);
+                }
+              }}
+              maxLength={maxCharacterLimit}
+              style={{
+                maxHeight: "32px",
+                fontFamily: selectedFont,
+                fontStyle:
+                  selectedFont === "Times New Roman" ? "italic" : "normal",
+              }}
+            />
+            {userInput.length >= maxCharacterLimit && (
+              <p style={{ color: "grey" }}>
+                You have reached the maximum number of characters.
+              </p>
+            )}
+            <div className="row my-2">
+              <button
+                onClick={handleSaveImage}
+                className="shadow btn custom-btn w-100"
+              >
+                Save Image
+              </button>
+              <button className="my-2 shadow btn custom-btn w-100">
+                {" "}
+                ADD TO CHART
+              </button>
             </div>
           </div>
         </div>
