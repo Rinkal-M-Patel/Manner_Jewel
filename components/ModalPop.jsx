@@ -171,82 +171,82 @@ const ModalPop = () => {
                 </p>
               </div>
             </div>
-          </div>
-          <div className="col-12 col-sm-6">
-            <div className="row">
-              <div className="col-4">
-                <button
-                  className={`font-button my-3 ${
-                    selectedFont === "Helvetica" ? "selected" : ""
-                  }`}
-                  onClick={() => handleFontClick("Helvetica")}
-                >
-                  Classic
-                </button>
+            <div className="col-12 col-sm-6">
+              <div className="row">
+                <div className="col-4">
+                  <button
+                    className={`font-button my-3 ${
+                      selectedFont === "Helvetica" ? "selected" : ""
+                    }`}
+                    onClick={() => handleFontClick("Helvetica")}
+                  >
+                    Classic
+                  </button>
+                </div>
+                <div className="col-4">
+                  <button
+                    className={`font-button my-3 ${
+                      selectedFont === "Charcoal" ? "selected" : ""
+                    }`}
+                    onClick={() => handleFontClick("Impact")}
+                    style={{
+                      fontStyle: selectedFont === "Charcoal" ? "selected" : "",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    Charcoal
+                  </button>
+                </div>
+                <div className="col-4">
+                  <button
+                    className={`font-button my-3 ${
+                      selectedFont === "Courier New" ? "selected" : ""
+                    }`}
+                    onClick={() => handleFontClick("Courier New")}
+                  >
+                    Contemporary
+                  </button>
+                </div>
               </div>
-              <div className="col-4">
-                <button
-                  className={`font-button my-3 ${
-                    selectedFont === "Charcoal" ? "selected" : ""
-                  }`}
-                  onClick={() => handleFontClick("Impact")}
-                  style={{
-                    fontStyle: selectedFont === "Charcoal" ? "selected" : "",
-                    fontWeight: "bold",
-                  }}
-                >
-                  Charcoal
-                </button>
-              </div>
-              <div className="col-4">
-                <button
-                  className={`font-button my-3 ${
-                    selectedFont === "Courier New" ? "selected" : ""
-                  }`}
-                  onClick={() => handleFontClick("Courier New")}
-                >
-                  Contemporary
-                </button>
-              </div>
-            </div>
-            {/* <SymbolChoices handleSymbolClick={handleSymbolClick} /> */}
-            <SymbolChoices handleSymbolClick={handleSymbolClick} />
+              {/* <SymbolChoices handleSymbolClick={handleSymbolClick} /> */}
+              <SymbolChoices handleSymbolClick={handleSymbolClick} />
 
-            <textarea
-              placeholder="Enter your text here"
-              value={userInput}
-              onChange={(e) => {
-                const inputValue = e.target.value;
-                const totalCharacters = inputValue.length;
+              <textarea
+                placeholder="Enter your text here"
+                value={userInput}
+                onChange={(e) => {
+                  const inputValue = e.target.value;
+                  const totalCharacters = inputValue.length;
 
-                if (totalCharacters <= maxCharacterLimit) {
-                  setUserInput(inputValue);
-                }
-              }}
-              maxLength={maxCharacterLimit}
-              style={{
-                maxHeight: "32px",
-                fontFamily: selectedFont,
-                fontStyle:
-                  selectedFont === "Times New Roman" ? "italic" : "normal",
-              }}
-            />
-            {userInput.length >= maxCharacterLimit && (
-              <p style={{ color: "grey" }}>
-                You have reached the maximum number of characters.
-              </p>
-            )}
-            <div className="row my-2">
-              <button
-                onClick={handleSaveImage}
-                className="shadow btn custom-btn w-100"
-              >
-                Save Image
-              </button>
-              <button className="my-2 shadow btn custom-btn w-100">
-                {" "}
-                ADD TO CHART
-              </button>
+                  if (totalCharacters <= maxCharacterLimit) {
+                    setUserInput(inputValue);
+                  }
+                }}
+                maxLength={maxCharacterLimit}
+                style={{
+                  maxHeight: "32px",
+                  fontFamily: selectedFont,
+                  fontStyle:
+                    selectedFont === "Times New Roman" ? "italic" : "normal",
+                }}
+              />
+              {userInput.length >= maxCharacterLimit && (
+                <p style={{ color: "grey" }}>
+                  You have reached the maximum number of characters.
+                </p>
+              )}
+              <div className="row my-2">
+                <button
+                  onClick={handleSaveImage}
+                  className="shadow btn custom-btn w-100"
+                >
+                  Save Image
+                </button>
+                <button className="my-2 shadow btn custom-btn w-100">
+                  {" "}
+                  ADD TO CHART
+                </button>
+              </div>
             </div>
           </div>
         </div>
