@@ -15,7 +15,7 @@ const HeroBanner = () => {
           <div className="row">
             <div className="col-6" style={inlineStyles}>
               <Image
-                src="/../public/header5.webp"
+                src="/header5.webp"
                 alt="Logo"
                 width={1000}
                 height={700}
@@ -23,7 +23,7 @@ const HeroBanner = () => {
             </div>
             <div className="col-6  " style={inlineStyles}>
               <Image
-                src="/../public/header4.webp"
+                src="/header4.webp"
                 alt="Logo"
                 width={1000}
                 height={700}
