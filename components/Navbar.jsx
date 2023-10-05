@@ -2,11 +2,9 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { AiOutlineShopping } from "react-icons/ai";
 import "../styles/Home.module.css";
-// import 'bootstrap/dist/js/bootstrap.bundle.min.js'; // Import Bootstrap JavaScript
 import Image from "next/image";
 import { Cart } from "./Cart";
 import { useStateContext } from "../context/StateContext";
-// import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 const Navbar = () => {
   const [searchInput, setSearch] = useState("");
