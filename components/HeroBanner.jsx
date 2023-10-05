@@ -1,40 +1,48 @@
 // HeroBanner
 import React from "react";
 import Link from "next/link";
-import Image1 from "../public/header5.webp";
-import Image2 from "../public/header4.webp";
+import Image from "next/image";
 
 const HeroBanner = () => {
-  const firstImage = {
-    backgroundImage: `url(${Image1.src})`,
-    backgroundSize: "cover",
-    backgroundRepeat: "no-repeat",
-    backgroundPosition: "center",
-    height: "80vh",
-  };
-
-  const secondImage = {
-    backgroundImage: `url(${Image2.src})`,
-    backgroundSize: "cover",
-    backgroundRepeat: "no-repeat",
-    backgroundPosition: "center",
-    height: "80vh",
+  const inlineStyles = {
+    paddingLeft: 0,
+    paddingRight: 0,
   };
   return (
     <>
-      <div className="container-fluid row header-custom">
-        <div className="col-6" style={firstImage}></div>
-        <div className="col-6" style={secondImage}></div>
-        <div className="carusel">
-          <div className="carusel_section">
-            <h2>CRAFTED BY KINGS, WORN</h2>
-            <h2>BY GENTLEMEN</h2>
-            <Link href="/">
-              <button className="btn btn-light">SHOP NOW</button>
-            </Link>
+      <section>
+        <div className="container-fluid  header-custom">
+          <div className="row">
+            <div className="col-6" style={inlineStyles}>
+              <Image
+                src="/../public/header5.webp"
+                alt="Logo"
+                width={1000}
+                height={700}
+              />
+            </div>
+            <div className="col-6  " style={inlineStyles}>
+              <Image
+                src="/../public/header4.webp"
+                alt="Logo"
+                width={1000}
+                height={700}
+              />
+            </div>
+          </div>
+          <div className="row">
+            <div className="carusel">
+              <div className="carusel_section">
+                <h2>CRAFTED BY KINGS, WORN</h2>
+                <h2>BY GENTLEMEN</h2>
+                <Link href="/">
+                  <button className="btn btn-light">SHOP NOW</button>
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
     </>
   );
 };
