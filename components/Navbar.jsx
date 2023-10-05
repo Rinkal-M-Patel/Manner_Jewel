@@ -93,29 +93,33 @@ const Navbar = () => {
             <div className="   offcanvas-body">
               <ul className=" navbar-nav justify-content-end flex-grow-1 pe-3">
                 <li className="nav-item">
-                  <a className="nav-link active" aria-current="page" href="#">
-                    NEW IN
-                  </a>
+                  <Link href="/Newin">
+                    <a className="nav-link active" aria-current="page" href="#">
+                      NEW IN
+                    </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#">
-                    TREDING
-                  </a>
+                  <Link href="/treding">
+                    <a className="nav-link">TREDING</a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#">
-                    NECKLACE
-                  </a>
+                  <Link href="/necklace">
+                    <a className="nav-link">NECKLACE</a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#">
-                    BRACELETS
-                  </a>
+                  <Link href="/bracelets">
+                    <a className="nav-link" href="#">
+                      BRACELETS
+                    </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#">
-                    RINGS
-                  </a>
+                  <Link href="/rings">
+                    <a className="nav-link">RINGS</a>
+                  </Link>
                 </li>
               </ul>
               <form className="d-flex mt-3" role="search">
