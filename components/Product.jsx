@@ -1,10 +1,10 @@
-import React from 'react';
-import Link from 'next/link';
+import React from "react";
+import Link from "next/link";
 
-import { urlFor } from '../lib/client';
+import { urlFor } from "../lib/client";
 
 const Product = ({ product: { image, name, slug, price } }) => {
-  if (name === 'bracelete') {
+  if (name === "bracelete") {
     return (
       <>
         <Link href={`/product/${slug.current}`}>
@@ -25,10 +25,9 @@ const Product = ({ product: { image, name, slug, price } }) => {
         </Link>
       </>
     );
-  }  else {
-   
+  } else {
     return null;
   }
-}
+};
 
 export default Product;
