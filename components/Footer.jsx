@@ -4,12 +4,13 @@ import React from 'react';
 
 const Footer = () => {
   return (
+    <>
     <footer className="footer">
       <div className="container">
         <div className="row">
           <div className="col-md-4">
             <h4>About Us</h4>
-            <p>We are an independent men's jewellery digital platform with sustainable sourcing at the heart of our products and ensure our suppliers observe the same. </p>
+            <p>We are an independent men jewellery digital platform with sustainable sourcing at the heart of our products and ensure our suppliers observe the same. </p>
           </div>
           <div className="col-md-4">
             <h4>Contact Us</h4>
@@ -27,7 +28,8 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
+    </footer></>
+
   );
 };
 
