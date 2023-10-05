@@ -6,7 +6,7 @@ import "../styles/Home.module.css";
 import Image from "next/image";
 import { Cart } from "./Cart";
 import { useStateContext } from "../context/StateContext";
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
+// import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 const Navbar = () => {
   const [searchInput, setSearch] = useState("");
@@ -14,8 +14,24 @@ const Navbar = () => {
   const handleInput = (e) => {
     setSearch(e.target.value);
   };
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
 
   const { showCart, setShowCart, totalQuantities } = useStateContext(0);
+  useEffect(() => {
+    const closeSidebarOnOutsideClick = (e) => {
+      if (isSidebarOpen && e.target.closest(".offcanvas") === null) {
+        setIsSidebarOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", closeSidebarOnOutsideClick);
+    return () => {
+      document.removeEventListener("mousedown", closeSidebarOnOutsideClick);
+    };
+  }, [isSidebarOpen]);
 
   return (
     <>
@@ -27,6 +43,7 @@ const Navbar = () => {
             data-bs-toggle="offcanvas"
             data-bs-target="#offcanvasDarkNavbar"
             aria-controls="offcanvasDarkNavbar"
+            onClick={toggleSidebar}
           >
             <span className="navbar-toggler-icon" />
           </button>
@@ -59,7 +76,9 @@ const Navbar = () => {
             </button>
           </div>
           <div
-            className="offcanvas offcanvas-start text-bg-dark"
+            className={`offcanvas offcanvas-start text-bg-dark ${
+              isSidebarOpen ? "show" : ""
+            }`}
             tabIndex={-1}
             id="offcanvasDarkNavbar"
             aria-labelledby="offcanvasDarkNavbarLabel"
@@ -69,6 +88,7 @@ const Navbar = () => {
                 type="button"
                 className="btn-close btn-close-white"
                 data-bs-dismiss="offcanvas"
+                onClick={toggleSidebar}
                 aria-label="Close"
               />
             </div>
