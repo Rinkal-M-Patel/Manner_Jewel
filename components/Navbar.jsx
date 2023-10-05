@@ -49,7 +49,7 @@ const Navbar = () => {
             <Link href="/">
               {/* Use the Image component to render the logo */}
               <Image
-                src="/../public/WhiteLogo.png"
+                src="/WhiteLogo.png"
                 alt="Logo"
                 width={200}
                 height={150}
