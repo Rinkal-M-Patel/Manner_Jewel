@@ -4,8 +4,26 @@ import { client, urlFor } from "../../lib/client";
 import { useStateContext } from "../../context/StateContext";
 import { Acordion, ModalPop } from "../../components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faDroplet, faCircle } from "@fortawesome/free-solid-svg-icons";
-
+import {
+  faEnvelope,
+  faTruck,
+  faPenNib,
+  faPlane,
+  faInfinity,
+  faAward,
+  faDroplet,
+  faCircle,
+  faCropSimple,
+} from "@fortawesome/free-solid-svg-icons";
+import {
+  faFacebook,
+  faPinterestP,
+  faInstagram,
+  faSpotify,
+  faTwitter,
+  faLinkedin,
+  faYoutube,
+} from "@fortawesome/free-brands-svg-icons";
 const ProductDetails = ({ product, products }) => {
   const [selectedColor, setSelectedColor] = useState("");
 
@@ -137,48 +155,75 @@ const ProductDetails = ({ product, products }) => {
                       </p>
                       <br />
                       <p>
-                        <i className=" mx-1 fa-regular fa-envelope"></i> FREE
-                        GIFT PACKAGING
-                      </p>{" "}
+                        <FontAwesomeIcon icon={faEnvelope} className="mx-1" />
+                        FREE GIFT PACKAGING
+                      </p>
                       <br />
                       <p>
-                        {" "}
-                        <i className="mx-1 fa-solid fa-truck"></i>FREE UK
-                        DELIVERY
-                      </p>{" "}
+                        <FontAwesomeIcon icon={faTruck} className="mx-1" />
+                        FREE UK DELIVERY
+                      </p>
                       <br />
                       <p>
-                        <i className="mx-1fa-solid fa-pen-nib"></i> UNIQUE
-                        DESIGNS
-                      </p>{" "}
+                        <FontAwesomeIcon icon={faPenNib} className="mx-1" />
+                        UNIQUE DESIGNS
+                      </p>
                       <br />
                       <p>
-                        <i className="mx-1fa-solid fa-plane"></i> NEXT DAY
-                        DELIVERY & WORLDWIDE SHIPPING
-                      </p>{" "}
+                        <FontAwesomeIcon icon={faPlane} className="mx-1" />
+                        NEXT DAY DELIVERY & WORLDWIDE SHIPPING
+                      </p>
                       <br />
                       <p>
-                        <i className="mx-1 fa-solid fa-infinity"></i>{" "}
+                        <FontAwesomeIcon icon={faInfinity} className="mx-1" />
                         SUSTAINABLY-CONSCIOUS
-                      </p>{" "}
+                      </p>
                     </div>
                     <div className="row  my-4 p-class icons  ">
                       <div className="col-12   d-flex justify-content-center ">
                         <p>
                           <a href="">
-                            {" "}
-                            <i className=" mx-2 my-3 fa-brands fa-facebook"></i>
-                          </a>{" "}
-                          <a href="">
-                            {" "}
-                            <i className="mx-2 my-3 fa-brands fa-pinterest-p"></i>
+                            <FontAwesomeIcon
+                              icon={faFacebook}
+                              className="mx-2 my-3"
+                            />
                           </a>
                           <a href="">
-                            <i className="mx-2 my-3 fa-brands fa-instagram"></i>
+                            <FontAwesomeIcon
+                              icon={faPinterestP}
+                              className="mx-2 my-3"
+                            />
+                          </a>
+                          <a href="">
+                            <FontAwesomeIcon
+                              icon={faInstagram}
+                              className="mx-2 my-3"
+                            />
                           </a>
                           <a href="">
                             {" "}
-                            <i className=" mx-2 my-3 fa-brands fa-spotify"></i>
+                            <FontAwesomeIcon
+                              icon={faSpotify}
+                              className="mx-2 my-3"
+                            />
+                          </a>
+                          <a>
+                            <FontAwesomeIcon
+                              icon={faTwitter}
+                              className="mx-2 my-3"
+                            />
+                          </a>
+                          <a>
+                            <FontAwesomeIcon
+                              icon={faLinkedin}
+                              className="mx-2 my-3"
+                            />
+                          </a>
+                          <a>
+                            <FontAwesomeIcon
+                              icon={faYoutube}
+                              className="mx-2 my-3"
+                            />
                           </a>
                         </p>
                       </div>
@@ -192,7 +237,7 @@ const ProductDetails = ({ product, products }) => {
                 <div className="water-class col-4">
                   <a href="">
                     <p>
-                      <i className=" mx-1 fa-solid fa-droplet"></i>
+                      <FontAwesomeIcon icon={faDroplet} className="mx-1" />
                       WATER & SWEAT REZISTANCE
                     </p>
                   </a>
@@ -201,7 +246,7 @@ const ProductDetails = ({ product, products }) => {
                   <a href="">
                     <p>
                       {" "}
-                      <i className=" mx-1 fa-solid fa-crop-simple"></i>
+                      <FontAwesomeIcon className="mx-1" icon={faCropSimple} />
                       ADJUSTUBLE SIZING
                     </p>
                   </a>
@@ -209,7 +254,7 @@ const ProductDetails = ({ product, products }) => {
                 <div className="water-class col-4">
                   <a href="">
                     <p>
-                      <i className="mx-1 fa-solid fa-award"></i>
+                      <FontAwesomeIcon icon={faAward} className="mx-1" />
                       EXCLUZIVE DESIGN
                     </p>
                   </a>
