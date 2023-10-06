@@ -16,25 +16,24 @@ const SymbolChoices = ({ handleSymbolClick }) => {
     "⚘",
     "✾",
     "❀",
-    "☑️",
     "❤️",
-    "☄️",
-    "⚡",
-    "⭐",
     "☽",
     "☼",
-    "⛅",
     "☄",
     "☃",
     "☈",
-    "☎️",
-    "✉️",
-    "✏️",
-    "✂️",
-    "❗",
-    "❓",
-    "❕",
-    "❔",
+    "♈",
+    "♉",
+    "♊",
+    "♋",
+    "♌",
+    "♍",
+    "♎",
+    "♏",
+    "♐",
+    "♑",
+    "♒",
+    "♓",
   ];
 
   return (
@@ -139,18 +138,20 @@ const ModalPop = () => {
               <div
                 style={{
                   position: "relative",
-                  width: "326px",
-                  height: "170px",
+                  width: "100%",
+                  maxWidth: "326px",
+                  margin: "0 auto",
                 }}
               >
                 <Image
-                  src="/bracelet1.jpg"
+                  src="/Bracelet11.png"
                   width={326}
                   height={170}
                   className="font-preview engraveImg"
                   style={{
                     objectFit: "cover",
                     borderRadius: "10px",
+                    width: "100%",
                   }}
                 />
 
@@ -165,14 +166,15 @@ const ModalPop = () => {
                     fontSize: "16px",
                     color: "black",
                     textAlign: "center",
-                    width: "100%",
+                    width: "80%",
+                    maxWidth: "300px",
                   }}
                 >
                   {userInput || "Preview Text"}
                 </p>
               </div>
             </div>
-            <div className="col-12 col-sm-6">
+            <div className="col-12  col-sm-6">
               <div className="row">
                 <div className="col-4">
                   <button
