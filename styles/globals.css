@@ -503,6 +503,11 @@ a {
   margin-bottom: 5px;
 }
 
+#selectedColor {
+  color: rgb(234, 231, 225);
+  font-size: 0.9rem;
+}
+
 .product-shipping-details p {
   margin: 5px 0;
 }
@@ -830,7 +835,7 @@ pre {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  max-width: 826px;
+  max-width: 855px;
   width: 80%;
   display: none;
   z-index: 1;
@@ -873,8 +878,8 @@ pre {
 
 .font-button {
   background-color: transparent;
-  height: 50px;
-  width: 100px;
+  max-height: 50px;
+  max-width: 105px;
   font-size: 1rem;
 }
 
@@ -925,4 +930,15 @@ pre {
   .ebcf_modal {
     margin-top: 50px;
   }
+}
+
+@media (max-width: 570px) {
+  .font-button {
+    line-height: 15px;
+    height: 40px;
+    width: 85px;
+    font-size: 12px;
+  }
+
+
 }
