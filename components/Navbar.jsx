@@ -7,16 +7,14 @@ import { Cart } from "./Cart";
 import { useStateContext } from "../context/StateContext";
 
 const Navbar = () => {
-  const [searchInput, setSearch] = useState("");
+  
 
   const handleInput = (e) => {
     setSearch(e.target.value);
   };
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-  const toggleSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen);
-  };
+  
 
   const { showCart, setShowCart, totalQuantities } = useStateContext(0);
   useEffect(() => {
@@ -33,45 +31,58 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="navbar navbar-custom navbar-dark bg-dark fixed-top ">
-        <div className="container-fluid">
-          <button
-            className="navbar-toggler custom-togler"
-            type="button"
-            data-bs-toggle="offcanvas"
-            data-bs-target="#offcanvasDarkNavbar"
-            aria-controls="offcanvasDarkNavbar"
-            onClick={toggleSidebar}
-          >
-            <span className="navbar-toggler-icon" />
-          </button>
-          <div className="navbar-brand logo">
+    <nav className="navbar navbar-custom navbar-expand-lg bg-secondary text-uppercase fixed-top  navbar-dark bg-dark" id="mainNav">
+      <div className="container">
+      <div className="logo">
             <Link href="/">
               {/* Use the Image component to render the logo */}
               <Image
                 src="/WhiteLogo.png"
                 alt="Logo"
-                width={200}
-                height={150}
+                width={1000}
+                height={300}
                 className="logo"
               />
             </Link>
           </div>
 
-          <div className="icons">
-            <a href="">
-              <i className=" iconClass  fa-brands fa-searchengin"></i>
-            </a>
-            <button
-              type="button"
-              className="btn btn-outline-info"
-              onClick={() => setShowCart(true)}
-            >
-              <AiOutlineShopping />
-              <span>{totalQuantities}</span>
-            </button>
-          </div>
-          <div
+        <button className="navbar-toggler text-uppercase text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu <i className="fas fa-bars"></i>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarResponsive">
+          <ul className="navbar-nav ms-auto">
+            <li className="nav-item mx-0 mx-lg-1">
+              <a className="nav-link py-3 px-0 px-lg-3 rounded" href="#about">Home</a>
+            </li>
+            <li className="nav-item mx-0 mx-lg-1">
+              <a className="nav-link py-3 px-0 px-lg-3 rounded" href="#work">Necklace</a>
+            </li>
+            <li className="nav-item mx-0 mx-lg-1">
+              <a className="nav-link py-3 px-0 px-lg-3 rounded" href="#skill">Ring</a>
+            </li>
+            <li className="nav-item mx-0 mx-lg-1">
+              <a className="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Bracelete</a>
+            </li>
+            <li className="nav-item mx-0 mx-lg-1">
+              <a className="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Contact</a>
+            </li>
+            <li className="nav-item mx-0 mx-lg-1">
+           
+          
+                <button
+                  type="button"
+                  className="nav-link py-3 px-0 px-lg-3 rounded"
+                  onClick={() => setShowCart(true)}
+                >
+                  <AiOutlineShopping />
+                  <span>{totalQuantities}</span>
+                </button>
+       
+
+            </li>
+          </ul>
+        </div>
+        {/* <div
             className={`offcanvas offcanvas-start text-bg-dark ${
               isSidebarOpen ? "show" : ""
             }`}
@@ -79,66 +90,12 @@ const Navbar = () => {
             id="offcanvasDarkNavbar"
             aria-labelledby="offcanvasDarkNavbarLabel"
           >
-            <div className="offcanvas-header">
-              <button
-                type="button"
-                className="btn-close btn-close-white"
-                data-bs-dismiss="offcanvas"
-                onClick={toggleSidebar}
-                aria-label="Close"
-              />
-            </div>
-            <div className="   offcanvas-body">
-              <ul className=" navbar-nav justify-content-end flex-grow-1 pe-3">
-                <li className="nav-item">
-                  <Link href="/Newin">
-                    <a className="nav-link active" aria-current="page" href="#">
-                      NEW IN
-                    </a>
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link href="/treding">
-                    <a className="nav-link">TREDING</a>
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link href="/necklace">
-                    <a className="nav-link">NECKLACE</a>
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link href="/bracelets">
-                    <a className="nav-link" href="#">
-                      BRACELETS
-                    </a>
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link href="/rings">
-                    <a className="nav-link">RINGS</a>
-                  </Link>
-                </li>
-              </ul>
-              <form className="d-flex mt-3" role="search">
-                <input
-                  className="form-control me-2"
-                  type="search"
-                  value={searchInput}
-                  placeholder="Search"
-                  aria-label="Search"
-                  onChange={handleInput}
-                />
-                <button className="btn btn-success" type="submit">
-                  Search
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </nav>
-
-      {showCart && <Cart />}
+           
+          
+          </div> */}
+      </div>
+    </nav>
+    {showCart && <Cart />}
     </>
   );
 };

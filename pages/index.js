@@ -14,8 +14,14 @@ const Home = ({ products}) => {
     </div>
 
 
-    <div className='container main-page'>
-    <h2 className="bordered-text">Best selling Necklace</h2>
+    <div className='container main-page title_pro'>
+    <h1 className="bordered-text">Best selling Necklace</h1>
+    <h4>New Arrivals</h4>
+              <img
+          src="/divider1.png"
+          alt="Logo"
+          className="product-title"
+        />
     <div className='row'>
     {products?.map((product) => <Necklace key={product._id} product={product} />)}
        
@@ -23,8 +29,17 @@ const Home = ({ products}) => {
     </div>
 
 
-    <div className='container main-page'>
-      <h2 className="bordered-text"> Best selling bracelete</h2>
+    <div className='container main-page title_pro'>
+      <div>
+      <h1 className="bordered-text"> Best Selling Bracelete</h1>
+      <h4>New Arrivals</h4>
+              <img
+          src="/divider1.png"
+          alt="Logo"
+          className="product-title"
+        />
+
+</div>
     <div className='row'>
         {products?.map((product) => (
           <Product key={product._id} product={product} />
@@ -32,8 +47,14 @@ const Home = ({ products}) => {
       </div>
     </div>
 
-    <div className='container main-page'>
-      <h2 className="bordered-text">Best selling Ring</h2>
+    <div className='container main-page title_pro'>
+      <h1 className="bordered-text">Best selling Ring</h1>
+      <h4>New Arrivals</h4>
+              <img
+          src="/divider1.png"
+          alt="Logo"
+          className="product-title"
+        />
     <div className='row'>
     {products?.map((product) => <Ring key={product._id} product={product} />)}
        

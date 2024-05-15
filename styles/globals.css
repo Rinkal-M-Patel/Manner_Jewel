@@ -26,6 +26,10 @@ a {
   text-align: center;
   padding: 5rem 2rem !important;
 }
+.nav-link {
+   color: #fff !important;
+   margin-top: 20px;
+}
 
 .cart-wrapper {
   width: 100vw;
@@ -146,6 +150,27 @@ a {
   background: transparent;
   border: none;
 }
+ 
+.title_pro h1, .title_pro h4 {
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.product-title{
+  height: auto;
+  width: auto;
+  margin-top: 5px;
+}
+
+/* .main-page .title h4, .title img {
+  margin: 0;
+  padding: 0;
+} */
+
+.title h4, .title img {
+  margin: 0; /* Remove any margin */
+  padding: 0; /* Remove any padding */
+}
+
 
 /* success page style */
 .thank-you-page {
@@ -339,7 +364,7 @@ a {
 }
 
 .logo {
-  height: 1em;
+ 
   margin-left: 0.5rem;
 }
 
@@ -384,8 +409,8 @@ a {
 .logo {
   margin-top: 0;
   padding-top: 0;
-  height: 100px;
-  width: 140px;
+  height: 35px;
+  width: 180px;
 }
 
 .iconClass {
@@ -555,7 +580,7 @@ a {
 
 body {
   font-family: Montserrat;
-  background-color: #e2e2e2 !important;
+  background-color: #fff !important;
 }
 
 .card-custom {
