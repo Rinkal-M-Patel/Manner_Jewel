@@ -288,6 +288,58 @@ a {
   flex-grow: 1;
 }
 
+.subscription-form {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.subscription-form input[type="email"] {
+  width: 200px;
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.subscription-form button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #28a745;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.subscription-form button:hover {
+  background-color: #218838;
+}
+
+.list-inline > li {
+  display: inline-block;
+}
+.group-middle {
+  display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: start;
+}
+.thumbnail-mary {
+  text-align: center;
+  overflow: hidden;
+  transition: all .3s ease;
+}
+.thumbnail {
+  position: relative;
+}
+.thumbnail-mary-figure img {
+  width: 100%;
+ }
+ .row-10 > * {
+  margin-bottom: 10px;
+}
+.gutters-10 [class*='col-'] {
+  padding-left: 5px;
+  padding-right: 5px;
+}
 .title a {
   color: #0070f3;
   text-decoration: none;
