@@ -126,7 +126,7 @@ const ModalPop = () => {
   };
   return (
     <div>
-      <button className="btn btn-secondary" id="mySizeChart">
+      <button className="btn engraving-btn" id="mySizeChart">
         Add complimentaty engraving
       </button>
 

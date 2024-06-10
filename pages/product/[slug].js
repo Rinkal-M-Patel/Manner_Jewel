@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Product } from '../../components';
 import { client, urlFor } from "../../lib/client";
 import { useStateContext } from "../../context/StateContext";
 import { Acordion, ModalPop } from "../../components";
@@ -73,7 +74,7 @@ const ProductDetails = ({ product, products }) => {
               </div>
 
               <div className="col-md-7 ">
-                <div className="container-fluid d-flex justify-content-center row">
+                <div className="container-fluid d-flex  row">
                   <div className="row secure">
                     <h3>{name}</h3>
                   </div>
@@ -109,11 +110,11 @@ const ProductDetails = ({ product, products }) => {
                       </div>
                       <span id="selectedColor">{selectedColor}</span>
                     </div>
-                    <div className="row form-item">
-                      <div className="col-6">
+                    <div className="quantity ">
+                      
                         <h4>Quantity</h4>
-                      </div>
-                      <div className="col-6 quantity">
+                      
+                      <div className="">
                         <h4>
                           {/* ----------------------------plus minus button------------------------------------ */}
                           <div className="quantity-toggle">
@@ -126,26 +127,17 @@ const ProductDetails = ({ product, products }) => {
                     </div>
                     <div className="row">
                       <div className="block">
-                        <div></div>
-                        <button
-                          className="shadow btn custom-btn w-100"
-                          onClick={() => onAdd(product, qty)}
-                        >
-                          Add to cart +
-                        </button>
-                        <button
-                          type="button"
-                          className="shadow btn custom-btn w-100"
-                          onClick={handleBuyNow}
-                        >
-                          Buy Now
-                        </button>
+                      <div className="buttons">
+            <button type="button" className="add-to-cart" onClick={() => onAdd(product, qty)}>Add to Cart</button>
+            <button type="button" className="buy-now" onClick={handleBuyNow}>Buy Now</button>
+          </div>
+                      
                       </div>
                     </div>
                     <div className="row">
-                      <div className="block  btn  w-100">
+                     
                         <ModalPop />
-                      </div>
+                     
                     </div>
 
                     <div className="row my-4 p-class">
@@ -232,44 +224,29 @@ const ProductDetails = ({ product, products }) => {
                 </div>
               </div>
             </div>
-            <div className="col-12 col-md-5  my-2">
-              <div className="row">
-                <div className="water-class col-4">
-                  <a href="">
-                    <p>
-                      <FontAwesomeIcon icon={faDroplet} className="mx-1" />
-                      WATER & SWEAT REZISTANCE
-                    </p>
-                  </a>
-                </div>
-                <div className="water-class col-4">
-                  <a href="">
-                    <p>
-                      {" "}
-                      <FontAwesomeIcon className="mx-1" icon={faCropSimple} />
-                      ADJUSTUBLE SIZING
-                    </p>
-                  </a>
-                </div>
-                <div className="water-class col-4">
-                  <a href="">
-                    <p>
-                      <FontAwesomeIcon icon={faAward} className="mx-1" />
-                      EXCLUZIVE DESIGN
-                    </p>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="col-12 col-md-5 ">
+            
+               
+          
+            {/* <div className="col-12 col-md-5 ">
               {" "}
               <Acordion />
-            </div>
+            </div> */}
           </div>
 
           {/*----------------------------- card production end------------------------------ */}
         </div>
+        
       </div>
+      <div className="maylike-products-wrapper">
+                <h2>You may also like</h2>
+                <div className="marquee">
+                  <div className="maylike-products-container track">
+                    {products.map((item) => (
+                      <Product key={item._id} product={item} />
+                    ))}
+                  </div>
+                </div>
+            </div>
     </>
   );
 };
